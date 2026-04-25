@@ -1,4 +1,4 @@
-# NASDAQ ITCH 5.0 Parser — 178M msg/s Single-Core on Lunar Lake
+# NASDAQ ITCH 5.0 Parser: 178M msg/s Single-Core on Lunar Lake
 
 Parses all 23 NASDAQ TotalView-ITCH 5.0 message types from a real 
 12GB binary. Two competing implementations benchmarked against each other.
