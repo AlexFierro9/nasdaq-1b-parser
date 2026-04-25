@@ -14,7 +14,7 @@ Checksum: `0x9beeff8d334e5f70` (identical across both — proves correctness)
 
 ## The Interesting Finding
 
-Hybrid wins single-core. Branchless wins multi-core.
+Hybrid wins single core. Branchless wins multi core.
 
 The branch predictor handles one message stream easily: Add Order ('A'), 
 Execute ('E'), and Trade ('P') account for ~80% of real ITCH traffic, so 
@@ -30,8 +30,8 @@ mispredict and degrades gracefully.
 - `mmap` + `MAP_POPULATE` + `MADV_HUGEPAGE` for TLB pressure reduction
 - `always_inline` for hot-path types (A, E, P), `noinline` for cold types
   to protect instruction cache
-- `__builtin_bswap` + `memcpy` for zero-UB big-endian field extraction  
-- Thread-local accumulator sink flushed per-run to prove liveness without
+- `__builtin_bswap` + `memcpy` for zero UB big endian field extraction  
+- Thread local accumulator sink flushed per run to prove liveness without
   atomic contention on the hot path
 - Verified with Linux `perf stat` TMA methodology
 
