@@ -16,7 +16,7 @@ Checksum: `0x9beeff8d334e5f70` (identical across both — proves correctness)
 
 Hybrid wins single-core. Branchless wins multi-core.
 
-The branch predictor handles one message stream easily — Add Order ('A'), 
+The branch predictor handles one message stream easily: Add Order ('A'), 
 Execute ('E'), and Trade ('P') account for ~80% of real ITCH traffic, so 
 the fast-path branches are predicted near-perfectly and cost almost nothing.
 
@@ -36,8 +36,9 @@ mispredict and degrades gracefully.
 - Verified with Linux `perf stat` TMA methodology
 
 ## Build
-
+compile any of the files with icpx and the following flags
 icpx -O3 -march=native -fiopenmp -flto 
+
 
 ## Data
 
